@@ -369,7 +369,6 @@ footer {
   }
 }
 
-
 /* Footer Links Color Upgrade */
 footer a {
   color: #ff9f1c; /* ቢጫ ቀለም (Yellow/Gold) */
@@ -381,4 +380,21 @@ footer a {
 footer a:hover {
   color: #ffffff; /* ሲነካ ወደ ነጭነት የሚቀየር (White on hover) */
   text-decoration: underline;
+}
+/* Header scroll ሲደረግ የሚኖረው ጥላ */
+header.scrolled {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* የካርዶች Hover effect (Mouse ሲያርፍባቸው ከፍ እንዲሉ) */
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }

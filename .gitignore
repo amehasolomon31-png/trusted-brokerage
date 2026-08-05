@@ -1,0 +1,12 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Word & Office Documents
+*.docx
+*.doc
+
+# Dependencies (ለወደፊት Node.js ስትጠቀም)
+node_modules/
+.env
