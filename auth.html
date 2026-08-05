@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="am" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trusted Brokerage | Login & Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="index.html" class="brand-text">Trusted Broker</a></div>
+    <button class="hamburger" id="hamburger-menu"><span></span><span></span><span></span></button>
+    <nav id="nav-links">
+      <a href="index.html">መነሻ</a>
+      <a href="properties.html">ቤቶች</a>
+      <a href="cars.html">መኪኖች</a>
+      <a href="dashboard.html">ዳሽቦርድ</a>
+    </nav>
+    <button id="theme-toggle" class="theme-btn">🌙</button>
+  </header>
+
+  <div class="auth-wrapper section-padding">
+    <div class="auth-card">
+      <div class="auth-tabs">
+        <button id="tab-login" class="auth-tab active">ግባ (Login)</button>
+        <button id="tab-register" class="auth-tab">ተመዝገብ (Register)</button>
+      </div>
+
+      <form id="form-login" class="auth-form active">
+        <h3>እንኳን ደህና መጡ</h3>
+        <input type="email" placeholder="ኢሜይል" required />
+        <input type="password" placeholder="የይለፍ ቃል" required />
+        <button type="submit" class="btn-primary" style="width:100%;">ግባ</button>
+      </form>
+
+      <form id="form-register" class="auth-form">
+        <h3>አዲስ መለያ ይክፈቱ</h3>
+        <input type="text" placeholder="ሙሉ ስም" required />
+        <input type="email" placeholder="ኢሜይል" required />
+        <input type="password" placeholder="የይለፍ ቃል" required />
+        <button type="submit" class="btn-primary" style="width:100%;">ተመዝገብ</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Trusted Brokerage. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main-script.js"></script>
+  <script src="dynamic.js"></script>
+</body>
+</html>

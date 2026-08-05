@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="am" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trusted Brokerage | Cars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html" class="brand-text">Trusted Broker</a>
+      </div>
+      <button class="hamburger" id="hamburger-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links">
+        <a href="index.html">መነሻ</a>
+        <a href="properties.html">ቤቶች</a>
+        <a href="cars.html">መኪኖች</a>
+        <a href="land.html">መሬት</a>
+        <a href="about.html">ስለ እኛ</a>
+        <a href="contact.html">ያነጋግሩን</a>
+        <a href="dashboard.html">ዳሽቦርድ</a>
+        <a href="auth.html" class="btn-nav">ግባ / ተመዝገብ</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙</button>
+    </header>
+
+    <section class="container section-padding">
+      <h2>የመኪኖች ማጣሪያ እና ዝርዝር</h2>
+
+      <div class="filter-controls">
+        <input
+          type="text"
+          id="carSearch"
+          placeholder="በመኪና ስም ይፈልጉ (ምሳሌ: Toyota...)"
+        />
+      </div>
+
+      <div class="grid" id="cars-grid" style="margin-top: 25px">
+        <div class="card car-item">
+          <img
+            src="./images/Toyota Executive 2022.jpg"
+            alt="Toyota Executive"
+          />
+          <div class="card-body">
+            <span class="badge badge-accent">ለሽያጭ</span>
+            <h3>Toyota Executive 2022</h3>
+            <p class="price">6,500,000 ብር</p>
+            <p>አውቶማቲክ | ቤንዚን</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="main-script.js"></script>
+    <script src="dynamic.js"></script>
+  </body>
+</html>

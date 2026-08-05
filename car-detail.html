@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="am" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trusted Brokerage | Car Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html" class="brand-text">Trusted Broker</a>
+      </div>
+      <button class="hamburger" id="hamburger-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links">
+        <a href="index.html">መነሻ</a>
+        <a href="properties.html">ቤቶች</a>
+        <a href="cars.html" class="active">መኪኖች</a>
+        <a href="land.html">መሬት</a>
+        <a href="about.html">ስለ እኛ</a>
+        <a href="contact.html">ያነጋግሩን</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙</button>
+    </header>
+
+    <section class="container section-padding">
+      <h2>Toyota Executive 2022</h2>
+      <p class="price" style="font-size: 1.8rem">6,500,000 ብር</p>
+
+      <div style="margin: 20px 0">
+        <img
+          src="./images/toyota-vitz.jpg"
+          alt="Toyota Executive"
+          style="
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+          "
+        />
+      </div>
+
+      <div class="grid" style="grid-template-columns: 2fr 1fr">
+        <div
+          style="
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+          "
+        >
+          <h3>የመኪናው መረጃ (Specifications)</h3>
+          <ul style="margin-left: 20px; margin-top: 15px; line-height: 2">
+            <li><strong>ብራንድ:</strong> Toyota</li>
+            <li><strong>የተመረተበት ዓመት:</strong> 2022</li>
+            <li><strong>የነዳጅ ዓይነት:</strong> ቤንዚን</li>
+            <li><strong>ትራንስሚሽን:</strong> አውቶማቲክ</li>
+            <li><strong>የተጓዘው ርቀት:</strong> 00 Km (አዲስ)</li>
+            <li><strong>ሰሌዳ:</strong> ኮድ 2 (አዲስ)</li>
+          </ul>
+        </div>
+
+        <div
+          style="
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            height: fit-content;
+          "
+        >
+          <h3>ያነጋግሩን</h3>
+          <p style="margin-top: 10px">ይህንን መኪና በአካል ለመመልከት ወይም ለመግዛት ይደውሉልን።</p>
+          <a
+            href="tel:+251911000000"
+            class="btn-primary"
+            style="margin-top: 15px; width: 100%; text-align: center"
+            >አሁኑኑ ይደውሉ</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Trusted Brokerage. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="main-script.js"></script>
+  </body>
+</html>

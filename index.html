@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="am" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trusted Brokerage | Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html" class="brand-text">Trusted Broker</a>
+    </div>
+
+    <button class="hamburger" id="hamburger-menu" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="nav-links">
+  <a href="index.html">መነሻ</a>
+  <a href="properties.html">ቤቶች</a>
+  <a href="cars.html">መኪኖች</a>
+  <a href="land.html">መሬት</a>
+  <a href="about.html">ስለ እኛ</a>
+  <a href="contact.html">ያነጋግሩን</a>
+  <a href="dashboard.html">ዳሽቦርድ</a>
+  <a href="auth.html" class="btn-nav">ግባ / ተመዝገብ</a>
+</nav>
+
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">🌙</button>
+  </header>
+
+  <section class="hero-slider" id="hero-slider">
+    <div class="slides">
+      <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/Toyota\ Executive\ 2022.jpg');">
+        <div class="hero-content fade-in">
+          <h1>ታማኝ የቤት እና የመኪና ድለላ</h1>
+          <p>ጥራት ያላቸውን የሚሸጡና የሚከራዩ ቤቶችን እና መኪኖችን በአንድ ቦታ ያግኙ።</p>
+          <a href="properties.html" class="btn-primary">ቤቶችን ይመልከቱ</a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/modern-villa.jpg');">
+        <div class="hero-content fade-in">
+          <h1>አዳዲስ እና ፅዱ ተሽከርካሪዎች</h1>
+          <p>በቀጥታ ከባለቤቱ የተረጋገጡ መኪኖችን በተመጣጣኝ ዋጋ ይግዙ።</p>
+          <a href="cars.html" class="btn-primary">መኪኖችን ይመልከቱ</a>
+        </div>
+      </div>
+    </div>
+    <button class="prev-slide" aria-label="Previous Slide">&#10094;</button>
+    <button class="next-slide" aria-label="Next Slide">&#10095;</button>
+  </section>
+
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <h3 class="counter" data-target="1500">0</h3>
+        <p>የተሸጡ ቤቶች</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="counter" data-target="850">0</h3>
+        <p>የተሸጡ መኪኖች</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="counter" data-target="3200">0</h3>
+        <p>ደስተኛ ደንበኞች</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="counter" data-target="120">0</h3>
+        <p>የተረጋገጡ ቦታዎች</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-padding">
+    <h2>የተመረጡ ቅናሾች</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="./images/modern-villa.jpg" alt="ዘመናዊ ቪላ" />
+        <div class="card-body">
+          <span class="badge">ቤት</span>
+          <h3>ዘመናዊ ቪላ ቤት</h3>
+          <p class="price">15,000,000 ብር</p>
+          <p>ቦሌ — 4 መኝታ ቤት | 3 መታጠቢያ</p>
+          <a href="properties.html" class="btn-secondary">ሙሉ መረጃ</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/toyota-landcruiser.jpg" alt="Toyota Executive" />
+        <div class="card-body">
+          <span class="badge badge-accent">መኪና</span>
+          <h3>Toyota Executive 2022</h3>
+          <p class="price">6,500,000 ብር</p>
+          <p>አውቶማቲክ | የነዳጅ | 00km</p>
+          <a href="cars.html" class="btn-secondary">ሙሉ መረጃ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-padding">
+    <h2>ተደጋግመው የሚጠየቁ ጥያቄዎች (FAQ)</h2>
+    <div class="faq-accordion">
+      <div class="faq-item">
+        <button class="faq-question">
+          እቃዬን (ቤት/መኪና) ለመሸጥ እንዴት ማስመዝገብ እችላለሁ? <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>ወደ አካውንትዎ በመግባት ወይም በቀጥታ በቴሌግራም ቦት በኩል የፎቶና የመረጃ መላኪያውን በመጫን ማስመዝገብ ይችላሉ።</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          የኮሚሽን ክፍያችሁ እንዴት ነው የሚሰላው? <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>የኮሚሽን ክፍያችን ህጋዊ ደረጃውን የጠበቀ እና ግልጽነት ያለው ሲሆን ውል ከመፈረሙ በፊት ይገለፃል።</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3>Trusted Brokerage</h3>
+        <p>በኢትዮጵያ ውስጥ ታማኝ የቤት፣ የመኪና እና የመሬት አገናኝ።</p>
+      </div>
+      <div>
+        <h4>ፈጣን ማያያዣዎች</h4>
+        <p>
+          <a href="properties.html">ቤቶች</a> | 
+          <a href="cars.html">መኪኖች</a> | 
+          <a href="dashboard.html">ዳሽቦርድ</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Trusted Brokerage. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main-script.js"></script>
+  <script src="dynamic.js"></script>
+</body>
+</html>
