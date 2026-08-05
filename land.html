@@ -1,69 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="am" dir="ltr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trusted Brokerage | Land Listings</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trusted Brokerage | Land Listings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html" class="brand-text">Trusted Broker</a>
+      </div>
+      <button class="hamburger" id="hamburger-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links">
+        <a href="index.html">መነሻ</a>
+        <a href="properties.html">ቤቶች</a>
+        <a href="cars.html">መኪኖች</a>
+        <a href="land.html" class="active">መሬት</a>
+        <a href="about.html">ስለ እኛ</a>
+        <a href="contact.html">ያነጋግሩን</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙</button>
+    </header>
 
-  <link rel="stylesheet" href="style.css"
-</head>
-<body>
+    <section class="container section-padding">
+      <h2>የሚሸጡ መሬቶች እና ቦታዎች</h2>
+      <div class="filter-controls">
+        <input
+          type="text"
+          id="landSearch"
+          placeholder="በመሬት ስም ወይም ቦታ ይፈልጉ (ምሳሌ፡ ቦሌ...)"
+        />
+      </div>
 
-  <header>
-    <div class="logo"><a href="index.html" class="brand-text">Trusted Broker</a></div>
-    <button class="hamburger" id="hamburger-menu"><span></span><span></span><span></span></button>
-    <nav id="nav-links">
-      <a href="index.html">መነሻ</a>
-      <a href="properties.html">ቤቶች</a>
-      <a href="cars.html">መኪኖች</a>
-      <a href="land.html" class="active">መሬት</a>
-      <a href="about.html">ስለ እኛ</a>
-      <a href="contact.html">ያነጋግሩን</a>
-    </nav>
-    <button id="theme-toggle" class="theme-btn">🌙</button>
-  </header>
-
-  <section class="container section-padding">
-    <h2>የሚሸጡ መሬቶች እና ቦታዎች</h2>
-
-    <div class="grid" style="margin-top: 25px;">
-      <div class="card">
-        <img src="./images/villa.jpg" alt="Land" />
-        <div class="card-body">
-          <span class="badge badge-land">መሬት</span>
-          <h3>ለቪላ የሚሆን ቦታ (CMC)</h3>
-          <p class="price">8,000,000 ብር</p>
-          <p>500 ካሬ ሜትር | ካርታ ያለው</p>
-          <a href="property-detail.html" class="btn-secondary">ሙሉ መረጃ</a>
+      <div class="grid" style="margin-top: 25px">
+        <div class="card">
+          <img src="./images/villa.jpg" alt="Land" />
+          <div class="card-body">
+            <span class="badge badge-land">መሬት</span>
+            <h3>ለቪላ የሚሆን ቦታ (CMC)</h3>
+            <p class="price">8,000,000 ብር</p>
+            <p>500 ካሬ ሜትር | ካርታ ያለው</p>
+            <a href="property-detail.html" class="btn-secondary">ሙሉ መረጃ</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/villa.jpg" alt="Land" />
+          <div class="card-body">
+            <span class="badge badge-land">መሬት</span>
+            <h3>ለድርጅት የሚሆን ቦታ (ላፍቶ)</h3>
+            <p class="price">25,000,000 ብር</p>
+            <p>1000 ካሬ ሜትር | የንግድ ቦታ</p>
+            <a href="property-detail.html" class="btn-secondary">ሙሉ መረጃ</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/villa.jpg" alt="Land" />
+          <div class="card-body">
+            <span class="badge badge-land">መሬት</span>
+            <h3>ለግል ስራዎች ቦታ</h3>
+            <p class="price">12,000,000 ብር</p>
+            <p>600 ካሬ ሜትር | ርቀት ቦታ በማንኛውም እድር</p>
+            <a href="property-detail.html" class="btn-secondary">ሙሉ መረጃ</a>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <img src="./images/villa.jpg" alt="Land" />
-        <div class="card-body">
-          <span class="badge badge-land">መሬት</span>
-          <h3>ለድርጅት የሚሆን ቦታ (ላፍቶ)</h3>
-          <p class="price">25,000,000 ብር</p>
-          <p>1000 ካሬ ሜትር | የንግድ ቦታ</p>
-          <a href="property-detail.html" class="btn-secondary">ሙሉ መረጃ</a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026 Trusted Brokerage. All rights reserved.</p>
+
+        <div class="social-links">
+          <a
+            href="https://t.me/SozetsBot"
+            target="_blank"
+            aria-label="Telegram Bot"
+            title="Telegram Bot"
+          >
+            <i class="fab fa-telegram"></i>
+          </a>
+
+          <a
+            href="https://t.me/sozets"
+            target="_blank"
+            aria-label="Telegram"
+            title="Telegram"
+          >
+            <i class="fas fa-paper-plane"></i>
+          </a>
+
+          <a
+            href="https://wa.me/251914889917?text=ሰላም%20ከTrusted%20Brokerage%20ድረ-ገጽ%20ነው%20የፃፍኩልዎት"
+            target="_blank"
+            aria-label="WhatsApp"
+            title="WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/solomon-ameha-ba7a54324"
+            target="_blank"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@jara.graphic.devo"
+            target="_blank"
+            aria-label="TikTok"
+            title="TikTok"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <footer>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Trusted Brokerage. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="main-script.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <script src="dynamic.js"></script>
-</body>
+    <script src="main-script.js"></script>
+  </body>
 </html>

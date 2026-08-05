@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trusted Brokerage | Property Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,9 +16,6 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-  <link rel="stylesheet" href="style.css"
   </head>
   <body>
     <header>
@@ -55,7 +53,6 @@
           "
         />
       </div>
-      
 
       <div class="grid" style="grid-template-columns: 2fr 1fr">
         <div
@@ -108,27 +105,38 @@
       </div>
     </section>
 
-    <footer>
-      <div class="container footer-content">
-        <div>
-          <h3>Trusted Brokerage</h3>
-          <p>በኢትዮጵያ ውስጥ ታማኝ የቤት፣ የመኪና እና የመሬት አገናኝ።</p>
-        </div>
-        <div>
-          <h4>ፈጣን ማያያዣዎች</h4>
-          <p>
-            <a href="properties.html">ቤቶች</a> | <a href="cars.html">መኪኖች</a> |
-            <a href="dashboard.html">ዳሽቦርድ</a>
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Trusted Brokerage. All rights reserved.</p>
-      </div>
-    </footer>
+    <footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2026 Trusted Brokerage. All rights reserved.</p>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="main-script.js"></script>
+    <div class="social-links">
+      <a href="https://t.me/SozetsBot" target="_blank" aria-label="Telegram Bot" title="Telegram Bot">
+        <i class="fab fa-telegram"></i>
+      </a>
+
+      <a href="https://t.me/sozets" target="_blank" aria-label="Telegram" title="Telegram">
+        <i class="fas fa-paper-plane"></i>
+      </a>
+
+      <a href="https://wa.me/251914889917?text=ሰላም%20ከTrusted%20Brokerage%20ድረ-ገጽ%20ነው%20የፃፍኩልዎት" target="_blank" aria-label="WhatsApp" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a href="https://linkedin.com/in/solomon-ameha-ba7a54324" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="https://www.tiktok.com/@jara.graphic.devo" target="_blank" aria-label="TikTok" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
     <script>
       // Leaflet map initialization for details page
       if (typeof L !== "undefined") {
@@ -142,5 +150,7 @@
           .openPopup();
       }
     </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="main-script.js"></script>
   </body>
 </html>

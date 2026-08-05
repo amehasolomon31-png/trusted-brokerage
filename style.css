@@ -172,6 +172,9 @@ nav a.active {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card img {
@@ -180,7 +183,7 @@ nav a.active {
   object-fit: cover;
 }
 .card-body {
-  padding: 1.2rem;
+  padding: 1.4rem;
 }
 .badge {
   background: var(--primary-color);
@@ -217,38 +220,117 @@ nav a.active {
   color: var(--primary-color);
 }
 
-/* FAQ Accordion */
+/* ==========================================
+   FAQ SLIDE & HOVER ANIMATION (CUBERTO STYLE)
+   ========================================== */
+
+.faq-section {
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.faq-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, #0f172a);
+}
+
 .faq-accordion {
-  max-width: 800px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
+
+/* 1. የጠቅላላ ሳጥኑ Slide & Glow Hover */
 .faq-item {
-  margin-bottom: 1rem;
-  border-radius: 6px;
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--card-bg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s !important;
+  will-change: transform;
 }
+
+/* Mouse ሲያርፍበት ሳጥኑ ወደ ላይ Slide የሚያደርግበት */
+.faq-item:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 15px 30px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* 2. የጥያቄው ጽሑፍ Hover & Motion */
 .faq-question {
   width: 100%;
-  text-align: left;
-  border: none;
-  padding: 1rem;
-  font-weight: 600;
-  cursor: pointer;
+  padding: 1.3rem 1.6rem;
   display: flex;
   justify-content: space-between;
-  background: var(--card-bg);
-  color: var(--text-color);
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
+/* Mouse ጥያቄው ላይ ሲያርፍ ጽሑፉ 5px ወደ ቀኝ Slide ያደርጋል */
+.faq-question:hover {
+  color: #0284c7 !important;
+  padding-left: 1.9rem !important; /* Smooth Right Slide */
+}
+
+/* 3. የአይኮኑ Rotate Motion */
+.faq-icon {
+  font-size: 1rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease !important;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg) !important;
+  color: #0284c7 !important;
+}
+
+/* 4. የመልሱ ሳጥን Slide Down & Up Animation */
 .faq-answer {
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 1rem;
+  transform: translateY(-10px); /* ጅምር ቦታ ለ Slide Down */
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.4s ease-in-out, 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.4s ease !important;
+  background-color: rgba(2, 132, 199, 0.03);
 }
+
+/* ጥያቄው ሲከፈት የመልሱ Slide Down ሁነታ */
 .faq-item.active .faq-answer {
-  max-height: 150px;
-  padding: 1rem;
+  max-height: 350px !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important; /* Slide to position */
+  padding: 0.5rem 1.6rem 1.4rem 1.6rem !important;
+}
+
+/* የመልሱ ጽሑፍ ራሱ Mouse ሲያርፍበት ትንሽ ወደ ቀኝ Slide እንዲል */
+.faq-answer p {
+  color: var(--text-secondary, #475569);
+  line-height: 1.6;
+  font-size: 0.98rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-answer p:hover {
+  transform: translateX(6px);
+  color: var(--text-primary, #0f172a);
 }
 
 /* Buttons & Auth Wrapper */
@@ -388,13 +470,190 @@ header.scrolled {
 }
 
 /* የካርዶች Hover effect (Mouse ሲያርፍባቸው ከፍ እንዲሉ) */
-.card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   UNIFIED ACTIVE & TAB SWITCHER EFFECTS
+   ========================================== */
+
+/* Active Tabs (Grid/Map View, Nav Items, Categories) */
+.tab-btn,
+.nav-link,
+.filter-btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer;
+}
+
+/* Active State Effect (ልክ እንደ Auth Tab Switcher) */
+.tab-btn.active,
+.nav-link.active,
+.filter-btn.active {
+  background-color: var(--accent-color, #0284c7) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35) !important;
+  border-color: transparent !important;
+}
+
+/* Smooth Fade/Slide Animation for Content Boxes */
+.tab-content,
+.view-content {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  display: none;
+}
+
+.tab-content.active,
+.view-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ==========================================
+   SOCIAL MEDIA ICONS & FOOTER STYLING
+   ========================================== */
+
+.footer {
+  background-color: var(--bg-card, #ffffff);
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  padding: 2rem 5%;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color, #e2e8f0);
+  color: var(--text-primary, #0f172a);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hover Effects (Cuberto Style Glow) */
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.social-links a[aria-label="Telegram Bot"]:hover,
+.social-links a[aria-label="Telegram"]:hover {
+  background-color: #0088cc !important;
+  box-shadow: 0 8px 18px rgba(0, 136, 204, 0.4) !important;
+}
+
+.social-links a[aria-label="WhatsApp"]:hover {
+  background-color: #25d366 !important;
+  box-shadow: 0 8px 18px rgba(37, 211, 102, 0.4) !important;
+}
+
+.social-links a[aria-label="LinkedIn"]:hover {
+  background-color: #0a66c2 !important;
+  box-shadow: 0 8px 18px rgba(10, 102, 194, 0.4) !important;
+}
+
+.social-links a[aria-label="TikTok"]:hover {
+  background-color: #000000 !important;
+  box-shadow: 0 8px 18px rgba(255, 0, 80, 0.4) !important;
+}
+
+.social-links a[aria-label="Facebook"]:hover {
+  background-color: #1877f2 !important;
+  box-shadow: 0 8px 18px rgba(24, 119, 242, 0.4) !important;
+}
+/* ==========================================
+   FOOTER TEXT CONTRAST & VISIBILITY FIX
+   ========================================== */
+
+/* 1. Footer Container Adjustments */
+footer.footer,
+.footer {
+  background-color: #ffffff !important;
+  border-top: 2px solid #e2e8f0 !important;
+  padding: 2.5rem 5% !important;
+  text-align: center;
+}
+
+/* 2. Copyright Text Visibility Fix (ከግሬይ ወደ ደመቅ ያለ ጥቁር/ብሉ) */
+footer.footer p,
+.footer p {
+  color: #1e293b !important; /* Deep Slate / Dark Text */
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.3px;
+}
+
+/* 3. Social Media Buttons Contrast & Hover Polish */
+.social-links a {
+  background-color: #f1f5f9 !important; /* Soft Light Background */
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important; /* Visible Dark Icons */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hover ሲደረግ ሙሉ በሙሉ ደምቀው እንዲታዩ */
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1) !important;
+  color: #ffffff !important;
+}
+
+.social-links a[aria-label="Telegram Bot"]:hover,
+.social-links a[aria-label="Telegram"]:hover {
+  background-color: #0088cc !important;
+  border-color: #0088cc !important;
+  box-shadow: 0 8px 18px rgba(0, 136, 204, 0.35) !important;
+}
+
+.social-links a[aria-label="WhatsApp"]:hover {
+  background-color: #25d366 !important;
+  border-color: #25d366 !important;
+  box-shadow: 0 8px 18px rgba(37, 211, 102, 0.35) !important;
+}
+
+.social-links a[aria-label="LinkedIn"]:hover {
+  background-color: #0a66c2 !important;
+  border-color: #0a66c2 !important;
+  box-shadow: 0 8px 18px rgba(10, 102, 194, 0.35) !important;
+}
+
+.social-links a[aria-label="TikTok"]:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.social-links a[aria-label="Facebook"]:hover {
+  background-color: #1877f2 !important;
+  border-color: #1877f2 !important;
+  box-shadow: 0 8px 18px rgba(24, 119, 242, 0.35) !important;
 }
